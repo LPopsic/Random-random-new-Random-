@@ -2,25 +2,40 @@
 using namespace std;
 int main(){
 
-    int language;
-
-    // menu
-    cout << "Random random = new Random(); v0.2" << endl;
+    int64_t setting, language;
+    cout <<" *   *   *   *   *   *   *   *" << endl;
+    cout << "Random random = new Random(); v0.3" << endl;
+    cout <<" *   *   *   *   *   *   *   *" << endl;
     cout << " " << endl;
-    cout << "What language do you want to select?" << endl;
-    cout << "Kokia kalba noretumete pasirinkti?" << endl;
-    cout << "Какой язык вы хотите выбрать?" << endl;
-    cout << " " << endl;
-    cout << "1 - English" << endl;
-    cout << "2 - Lietuviu" << endl;
-    cout << "3 - Pусский" << endl;
-    cin >> language;
+    cout << "1 - Go to the main program / Eiti į pagrindinę programą / Перейти в основную программу" << endl;
+    cout << "2 - Changelog (in English)" << endl;
+    cin >> setting;
     system("cls");
 
-    // english
+    if(setting == 1){
+        cout << "What language do you want to select?" << endl;
+        cout << "Kokia kalbą noretumėte pasirinkti?" << endl;
+        cout << "Какой язык вы хотите выбрать?" << endl;
+        cout << " " << endl;
+        cout << "1 - English" << endl;
+        cout << "2 - Lietuvių" << endl;
+        cout << "3 - Pусский" << endl;
+        cin >> language;
+        system("cls");
+    }
+    if(setting == 2){
+        cout << "Changelog for Random random = new Random(); v0.3:" << endl;
+        cout << " " << endl;
+        cout << "• Added one more menu" << endl;
+        cout << "• Added 64-bit intergers: the group number limit is 9223372036854775807 right now (the limit was 2147483647" << endl;
+    }
+    if(setting >= 3){
+        cout << "You entered the wrong number. / Įvedėte neteisingą numerį. / Вы ввели неправильный номер." << endl;
+    }
+
     if(language == 1){
     cout << "Enter groups of numbers: ";
-    int a, k = 0;
+    int64_t a, k = 0;
     cin >> a;
     srand(time(NULL));
     cout << " " << endl;
@@ -34,10 +49,9 @@ int main(){
     return 0;
     }
 
-    // lietuviu
     if(language == 2){
     cout << "Įveskite skaičių grupes: ";
-    int a, k = 0;
+    int64_t a, k = 0;
     cin >> a;
     srand(time(NULL));
     cout << " " << endl;
@@ -45,16 +59,15 @@ int main(){
     cout << " " << endl;
     for(int x=0;x<a;x++){
         k++;
-        cout << 1+ (rand() % 1000000000000) << " || " << k << " numeris" << " iš " << a << " linijų" << endl; // out of system written by khamperis pukum
+        cout << 1+ (rand() % 1000000000000) << " || " << k << " numeris" << " iš " << a << endl; // out of system written by khamperis pukum
     }
     cout << "Pabaiga" << endl;
     return 0;
     }
 
-    // pусский
     if(language == 3){
     cout << "Введите группы чисел: ";
-    int a, k = 0;
+    int64_t a, k = 0;
     cin >> a;
     srand(time(NULL));
     cout << " " << endl;
@@ -62,10 +75,12 @@ int main(){
     cout << " " << endl;
     for(int x=0;x<a;x++){
         k++;
-        cout << 1+ (rand() % 1000000000000) << " || " << k << " число" << " от " << a << " линии" << endl; // out of system written by khamperis pukum
+        cout << 1+ (rand() % 1000000000000) << " || " << k << " число" << " от " << a << endl; // out of system written by khamperis pukum
     }
     cout << "Kонец" << endl;
     return 0;
     }
-    else(cout << "You entered the wrong number. / Įvedėte neteisingą numerį. / Вы ввели неправильный номер.");
+    if(language >= 4){
+        cout << "You entered the wrong number. / Įvedėte neteisingą numerį. / Вы ввели неправильный номер." << endl;
+    }
 }
